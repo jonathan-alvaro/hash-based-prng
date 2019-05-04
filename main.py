@@ -17,4 +17,6 @@ def run_hash_algorithm(hash_func, seed=b"Default seed", num_iters=100):
             if int(character,base=16) >= 10:
                 continue
             numbers.append(int(character, base=16))
+        hasher = hash_func(current_string.encode())
+        current_string = hasher.hexdigest()
     return numbers
